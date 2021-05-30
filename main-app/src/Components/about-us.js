@@ -1,11 +1,12 @@
 import React from "react";
 import CustomButton from "./custom-button.js";
+import "../Stylesheet/about-us.module.css";
 //import css file for styling
 
 function AboutUs() {
   return (
     <div class="aboutUs">
-      <p>
+      <p id="intro">
         In this website, you are able to track your calorie intakes from your
         daily diets. We will then provide you with meal suggestions according to
         your recommended target calories! Before all that, please allow us to
