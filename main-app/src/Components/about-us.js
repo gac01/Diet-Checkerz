@@ -12,8 +12,10 @@ function AboutUs() {
         your recommended target calories! Before all that, please allow us to
         get to know you a little better by answering our short Survey. Cheers!!
       </p>
+      <p>
+        <CustomButton txt="SURVEY PAGE"/>
+      </p>
       <br />
-      <CustomButton txt="SURVEY PAGE"/>
     </div>
   );
 }
