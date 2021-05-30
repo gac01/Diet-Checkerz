@@ -6,7 +6,6 @@ function Home() {
   return (
     <div class="intro">
       <h1>Hello There</h1>
-      <br />
       <h2>Welcome to Diet-Checkerz</h2>
     </div>
   );
