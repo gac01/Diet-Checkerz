@@ -1,6 +1,6 @@
 import React from "react";
 import CustomButton from "./custom-button.js";
-import logo from "../assets/logo.jpg";
+//import logo from "../assets/logo.jpg";
 import { Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ const styles = makeStyles({
   bar: {
     paddingTop: "1.15rem",
     backgroundColor: "#fff",
-    ["@media (max-width:780px)"]: {
+    /*["@media (max-width:780px)"]: {
       flexDirection: "column",
     },
   },
@@ -34,7 +34,7 @@ const styles = makeStyles({
     },
     ["@media (max-width:780px)"]: {
       paddingBottom: "1rem",
-    },
+    },*/
   },
 });
 
@@ -46,7 +46,6 @@ function NavBar() {
       color="rgba(0, 0, 0, 0.87)"
       className={classes.bar}
     >
-      <img src={logo} className={classes.logo} />
       <Typography variant="h6" className={classes.menuItem}>
         <Link to="/main">HOME</Link>
       </Typography>
