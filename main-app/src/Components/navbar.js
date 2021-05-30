@@ -9,12 +9,14 @@ const styles = makeStyles({
   bar: {
     paddingTop: "1.15rem",
     backgroundColor: "#fff",
-    /*["@media (max-width:780px)"]: {
+    // eslint-disable-next-line
+    ["@media (max-width:780px)"]: {
       flexDirection: "column",
     },
   },
   logo: {
     width: "15%",
+    // eslint-disable-next-line
     ["@media (max-width:780px)"]: {
       display: "none",
     },
@@ -22,6 +24,7 @@ const styles = makeStyles({
   logoMobile: {
     width: "100%",
     display: "none",
+    // eslint-disable-next-line
     ["@media (max-width:780px)"]: {
       display: "inline-block",
     },
@@ -32,9 +35,10 @@ const styles = makeStyles({
     "&:hover": {
       color: "#4f25c8",
     },
+    // eslint-disable-next-line
     ["@media (max-width:780px)"]: {
       paddingBottom: "1rem",
-    },*/
+    },
   },
 });
 

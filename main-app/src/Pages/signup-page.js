@@ -1,5 +1,5 @@
 import React from "react";
-import CustomButton from "../Components/custom-button.js";
+//import CustomButton from "../Components/custom-button.js";
 
 function SurveyPage() {
   return (
