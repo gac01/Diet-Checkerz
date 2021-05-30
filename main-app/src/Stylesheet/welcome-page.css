@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: #3CB371;
+  font-family:'Coming Soon', cursive;
+  font-size: 30px;
 }
 
 .App-logo {

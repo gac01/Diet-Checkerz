@@ -5,8 +5,8 @@ import "../Stylesheet/about-us.module.css";
 
 function AboutUs() {
   return (
-    <div class="aboutUs">
-      <p id="intro">
+    <div>
+      <p className="aboutUs">
         In this website, you are able to track your calorie intakes from your
         daily diets. We will then provide you with meal suggestions according to
         your recommended target calories! Before all that, please allow us to

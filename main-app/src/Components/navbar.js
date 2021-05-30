@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const styles = makeStyles({
   bar: {
     paddingTop: "1.15rem",
-    backgroundColor: "#fff",
+    backgroundColor: "#006400",
     // eslint-disable-next-line
     ["@media (max-width:780px)"]: {
       flexDirection: "column",
@@ -19,14 +19,6 @@ const styles = makeStyles({
     // eslint-disable-next-line
     ["@media (max-width:780px)"]: {
       display: "none",
-    },
-  },
-  logoMobile: {
-    width: "100%",
-    display: "none",
-    // eslint-disable-next-line
-    ["@media (max-width:780px)"]: {
-      display: "inline-block",
     },
   },
   menuItem: {
@@ -45,24 +37,29 @@ const styles = makeStyles({
 function NavBar() {
   const classes = styles();
   return (
+
     <Toolbar
       position="sticky"
       color="rgba(0, 0, 0, 0.87)"
+      // eslint-disable-next-line
       className={classes.bar}
     >
+
       <Typography variant="h6" className={classes.menuItem}>
-        <Link to="/main">HOME</Link>
+        <Link to="/main"><CustomButton txt="HOME"/></Link>
       </Typography>
       <Typography variant="h6" className={classes.menuItem}>
-        <Link to="/">ABOUT US</Link>
+        <Link to="/"><CustomButton txt="ABOUT US"/></Link>
       </Typography>
       <Typography variant="h6" className={classes.menuItem}>
-        <Link to="../signup">SIGN IN</Link>
+        <Link to="../signup"><CustomButton txt="SIGN UP"/></Link>
       </Typography>
       <Typography variant="h6" className={classes.menuItem}>
-        CONTACT US
+        <Link to="/"><CustomButton txt="CONTACT US"/></Link>
       </Typography>
-      <CustomButton txt="SIGN UP" />
+      <Typography variant="h6" className={classes.menuItem}>
+        <Link to="/"><CustomButton txt="SIGN IN"/></Link>
+      </Typography>
     </Toolbar>
   );
 }
