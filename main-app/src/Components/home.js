@@ -1,4 +1,5 @@
 import React from "react";
+import "../Stylesheet/home.module.css";
 //import css file for styling
 
 function Home() {
