@@ -12,7 +12,7 @@ function Header(props) {
     <header>
       <h1> Diet-Checkerz </h1>
       <div style={{ display: "flex", flexFlow: "row nowrap" }}>
-        <Paper variant="outlined" class="HeaderBox">
+        <Paper className="HeaderBox" elevation={3}>
           <p>
             {" "}
             You need <strong> 2000 </strong> calories to reach your daily goal!
@@ -22,7 +22,7 @@ function Header(props) {
             calories!
           </p>
         </Paper>
-        <Paper variant="outlined" class="HeaderBox">
+        <Paper className="HeaderBox" elevation={3}>
           <p>
             You have had <strong> {Meal.length} </strong> meal
             {Meal.length !== 1 ? "s" : ""} today!

@@ -1,4 +1,6 @@
 .HeaderBox {
+  display: flex;
   flex-basis: 50%;
   flex-grow: 0;
+  margin: 1rem;
 }

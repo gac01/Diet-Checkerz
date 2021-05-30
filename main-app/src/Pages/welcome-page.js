@@ -4,10 +4,13 @@ import {
   makeStyles,
 } from "@material-ui/core/styles";
 import "../Stylesheet/welcome-page.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import NavBar from "../Components/navbar";
 import Home from "../Components/home.js";
 import AboutUs from "../Components/about-us.js";
+import SurveyPage from "./signup-page";
+import MainPage from "./main-page";
 
 const theme = createMuiTheme({
   palette: {
@@ -34,13 +37,25 @@ const theme = createMuiTheme({
 
 function WelcomePage() {
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <NavBar />
-        <Home />
-        <AboutUs />
-      </ThemeProvider>
-    </div>
+    <Router>
+      <div className="App">
+        <ThemeProvider theme={theme}>
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+              <AboutUs />
+            </Route>
+            <Route path="/signup">
+              <SurveyPage />
+            </Route>
+            <Route path="/main">
+              <MainPage />
+            </Route>
+          </Switch>
+        </ThemeProvider>
+      </div>
+    </Router>
   );
 }
 

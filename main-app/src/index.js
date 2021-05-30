@@ -1,19 +1,13 @@
 import React from "react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-//import { Router, hashHistory as history } from "react-router";
 
-//import routes from "./router.js";
 import WelcomePage from "./Pages/welcome-page";
-import SurveyPage from "./Pages/signup-page";
-import MainPage from "./Pages/main-page";
-
 import "./index.css";
 
 ReactDOM.render(
-  //<Router routes={routes} history={history} />,
   <StrictMode>
-    <MainPage />
+    <WelcomePage />
   </StrictMode>,
   document.getElementById("root")
 );

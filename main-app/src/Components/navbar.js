@@ -3,6 +3,7 @@ import CustomButton from "./custom-button.js";
 import logo from "../assets/logo.jpg";
 import { Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const styles = makeStyles({
   bar: {
@@ -47,13 +48,13 @@ function NavBar() {
     >
       <img src={logo} className={classes.logo} />
       <Typography variant="h6" className={classes.menuItem}>
-        HOME
+        <Link to="/main">HOME</Link>
       </Typography>
       <Typography variant="h6" className={classes.menuItem}>
-        ABOUT US
+        <Link to="/">ABOUT US</Link>
       </Typography>
       <Typography variant="h6" className={classes.menuItem}>
-        SIGN IN
+        <Link to="../signup">SIGN IN</Link>
       </Typography>
       <Typography variant="h6" className={classes.menuItem}>
         CONTACT US

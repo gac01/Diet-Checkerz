@@ -30,7 +30,7 @@ function InputBox(props) {
   };
 
   return (
-    <Paper variant="outlined" class="InputBox">
+    <Paper className="InputBox" elevation={3}>
       <h3> Input your meal here!</h3>
       <form onSubmit={handleSubmitMeal}>
         <Grid
@@ -183,11 +183,11 @@ function Body(props) {
         Date={Date}
         setDate={setDate}
       />
-      <Paper className="RecommendedMeal" variant="outlined">
+      <Paper className="RecommendedMeal" elevation={3}>
         <h3> Your Recommended Daily Meal Plan </h3>
         <RecommendedMeal />
       </Paper>
-      <Paper className="CurrentMeal" variant="outlined">
+      <Paper className="CurrentMeal" elevation={3}>
         <h3> Your Meals Throughout the Day </h3>
         {Meal.length > 0 ? (
           <CurrentMeal Meal={Meal} Calories={Calories} Date={Date} />
@@ -195,7 +195,7 @@ function Body(props) {
           <p> You haven't eaten any meals today!</p>
         )}
       </Paper>
-      <Paper className="DietProgress" variant="outlined">
+      <Paper className="DietProgress" elevation={3}>
         <h3> Your Diet Progress </h3>
         <DietProgress />
       </Paper>
