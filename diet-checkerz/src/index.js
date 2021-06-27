@@ -4,13 +4,9 @@ import ReactDOM from "react-dom";
 import "./reportWebVitals.js";
 import WelcomePage from "./Pages/welcome-page";
 import "./index.css";
+import App from './App';
 
-ReactDOM.render(
-  <StrictMode>
-    <WelcomePage />
-  </StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 
 const reportWebVitals = (onPerfEntry) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
