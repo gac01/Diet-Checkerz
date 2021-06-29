@@ -2,6 +2,7 @@ import './App.css';
 import WelcomePage from './Pages/welcome-page';
 import Login from './Components/login';
 import fire from './Config/fire'
+import React, {Component} from "react";
 
 class App extends Component{
   constructor(props) {
