@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../Stylesheet/main-page.css";
 import "../Stylesheet/body.module.css";
 import { Button, TextField, Grid, Paper } from "@material-ui/core";
+import fire from "../Config/fire.js";
+import firebase from "firebase";
 
 function InputBox(props) {
   const { Meal, setMeal, Calories, setCalories, Date, setDate } = props;
   const [newMeal, setNewMeal] = useState("e.g. Chicken Rice");
   const [newCalories, setNewCalories] = useState("");
   const [newDate, setNewDate] = useState("");
-  const handleSubmitMeal = (event) => {
+  const handleSubmitMeal = () => {
+    const MealRef = fire.database().ref("Meal");
+    const Meals = {
+      Meal,
+      Calories,
+      Date,
+    };
+    MealRef.push(Meals);
+  };
+  /*
+(event) => {
     event.preventDefault();
     const CaloriesData = [...Calories, Number(newCalories)];
     setCalories(CaloriesData);
@@ -17,6 +29,7 @@ function InputBox(props) {
       {
         description: newMeal,
         calories: newCalories,
+        date: newDate,
       },
     ];
     const DateData = [
@@ -28,7 +41,7 @@ function InputBox(props) {
     setMeal(MealsData);
     setDate(DateData);
   };
-
+*/
   return (
     <Paper className="InputBox" elevation={3}>
       <h3> Input your meal here!</h3>
