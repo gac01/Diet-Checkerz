@@ -1,75 +1,39 @@
-import React from "react";
-import CustomButton from "./custom-button.js";
-//import logo from "../assets/logo.jpg";
-import { Toolbar, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
+import React from 'react';
+import "../Stylesheet/navbar.module.css";
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink
+} from './navbar-styling';
 
-const styles = makeStyles({
-  bar: {
-    paddingTop: "1.15rem",
-    backgroundColor: "#006400",
-    // eslint-disable-next-line
-    ["@media (max-width:780px)"]: {
-      flexDirection: "column",
-    },
-  },
-  logo: {
-    width: "15%",
-    // eslint-disable-next-line
-    ["@media (max-width:780px)"]: {
-      display: "none",
-    },
-  },
-  menuItem: {
-    cursor: "pointer",
-    flexGrow: 1,
-    "&:hover": {
-      color: "#4f25c8",
-    },
-    // eslint-disable-next-line
-    ["@media (max-width:780px)"]: {
-      paddingBottom: "1rem",
-    },
-  },
-});
-
-function NavBar() {
-  const classes = styles();
+const NavBar = () => {
   return (
-    <Toolbar
-      position="sticky"
-      color="rgba(0, 0, 0, 0.87)"
-      // eslint-disable-next-line
-      className={classes.bar}
-    >
-      <Typography variant="h6" className={classes.menuItem}>
-        <Link to="/main">
-          <CustomButton txt="HOME" />
-        </Link>
-      </Typography>
-      <Typography variant="h6" className={classes.menuItem}>
-        <Link to="/">
-          <CustomButton txt="ABOUT US" />
-        </Link>
-      </Typography>
-      <Typography variant="h6" className={classes.menuItem}>
-        <Link to="../signup">
-          <CustomButton txt="SIGN UP" />
-        </Link>
-      </Typography>
-      <Typography variant="h6" className={classes.menuItem}>
-        <Link to="/">
-          <CustomButton txt="CONTACT US" />
-        </Link>
-      </Typography>
-      <Typography variant="h6" className={classes.menuItem}>
-        <Link to="/">
-          <CustomButton txt="SIGN IN" />
-        </Link>
-      </Typography>
-    </Toolbar>
-  );
+    <div>
+      <Nav>
+        <NavLink to="/">
+          <img src='https://i.imgur.com/wDzz5ij.png' alt='Logo' width='200px' height='300px'/>
+        </NavLink>
+        <Bars />
+        <NavMenu>
+          <NavLink to="/main" activeStyle>
+            Home
+          </NavLink>
+          <NavLink to="/" activeStyle>
+            About Us
+          </NavLink>
+          <NavLink to="/" activeStyle>
+            Contact Us
+          </NavLink>
+          <NavBtnLink to='../signup'>Take Quiz</NavBtnLink>
+        </NavMenu>
+
+        
+      </Nav>
+    </div>
+  )
 }
 
-export default NavBar;
+export default NavBar
