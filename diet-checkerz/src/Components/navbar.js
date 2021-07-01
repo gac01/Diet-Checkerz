@@ -27,7 +27,7 @@ const NavBar = () => {
           <NavLink to="/" activeStyle>
             Contact Us
           </NavLink>
-          <NavBtnLink to='../signup'>Take Quiz</NavBtnLink>
+          <NavBtnLink to='../signup'>Take Survey</NavBtnLink>
         </NavMenu>
 
         
