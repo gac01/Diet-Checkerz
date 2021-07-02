@@ -3,21 +3,27 @@ import "../Stylesheet/main-page.css";
 import "../Stylesheet/body.module.css";
 import { Button, TextField, Grid, Paper } from "@material-ui/core";
 import fire from "../Config/fire.js";
-import firebase from "firebase";
 
 function InputBox(props) {
   const { Meal, setMeal, Calories, setCalories, Date, setDate } = props;
   const [newMeal, setNewMeal] = useState("e.g. Chicken Rice");
   const [newCalories, setNewCalories] = useState("");
   const [newDate, setNewDate] = useState("");
-  const handleSubmitMeal = () => {
-    const MealRef = fire.database().ref("Meal");
-    const Meals = {
-      Meal,
-      Calories,
-      Date,
-    };
-    MealRef.push(Meals);
+  const handleSubmitMeal = (event) => {
+    event.preventDefault();
+    fire
+      .firestore()
+      .collection("Meals")
+      .add({
+        meal: newMeal,
+        calories: parseInt(newCalories),
+        date: newDate,
+      })
+      .then(() => {
+        setNewMeal("e.g. Chicken Rice");
+        setNewCalories("");
+        setNewDate("");
+      });
   };
   /*
 (event) => {
@@ -89,7 +95,12 @@ function InputBox(props) {
               setNewDate(event.target.value);
             }}
           />
-          <Button type="submit" variant="contained" color="primary">
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            onSubmit={handleSubmitMeal}
+          >
             Add
           </Button>{" "}
         </Grid>
@@ -129,8 +140,20 @@ function RecommendedMeal() {
   );
 }
 
-function CurrentMeal(props) {
-  const { Meal } = props;
+function CurrentMeal() {
+  const [Meal, setMeal] = useState([]);
+  useEffect(() => {
+    fire
+      .firestore()
+      .collection("Meals")
+      .onSnapshot((snapshot) => {
+        const NewMeals = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setMeal(NewMeals);
+      });
+  }, []);
   return (
     <>
       <table style={{ margin: "0 auto", width: "100%" }}>
@@ -141,11 +164,11 @@ function CurrentMeal(props) {
             <th> Calories </th>
           </tr>
         </thead>
-        {Meal.map((Meal, index) => (
-          <tr key={index}>
+        {Meal.map((MealList, index) => (
+          <tr key={Meal.id}>
             <td>{index + 1}</td>
-            <td> {Meal.description}</td>
-            <td> {Meal.calories}</td>
+            <td> {MealList.meal}</td>
+            <td> {MealList.calories}</td>
           </tr>
         ))}
       </table>
@@ -202,11 +225,7 @@ function Body(props) {
       </Paper>
       <Paper className="CurrentMeal" elevation={3}>
         <h3> Your Meals Throughout the Day </h3>
-        {Meal.length > 0 ? (
-          <CurrentMeal Meal={Meal} Calories={Calories} Date={Date} />
-        ) : (
-          <p> You haven't eaten any meals today!</p>
-        )}
+        <CurrentMeal />
       </Paper>
       <Paper className="DietProgress" elevation={3}>
         <h3> Your Diet Progress </h3>
