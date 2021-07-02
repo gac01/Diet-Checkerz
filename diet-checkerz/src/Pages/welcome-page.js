@@ -7,7 +7,6 @@ import {
   import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
   
   import NavBar from "../Components/navbar";
-  import Home from "../Components/home.js";
   import AboutUs from "../Components/about-us.js";
   import SurveyPage from "./signup-page";
   import MainPage from "./main-page";
@@ -43,7 +42,6 @@ import {
             <NavBar />
             <Switch>
               <Route exact path="/">
-                <Home />
                 <AboutUs />
               </Route>
               <Route path="/signup">
