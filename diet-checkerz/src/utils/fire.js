@@ -13,28 +13,28 @@ var firebaseConfig = {
 
 export const fire = firebase.initializeApp(firebaseConfig);
 
-export const createUserDocument = async (
-  user,
-  username,
-  gender,
-  age,
-  weight,
-  height,
-  goal,
-  bodytype,
-  sleeptime,
-  goaltime
-) => {
+export const createUserDocument = async (userData) => {
+  const {
+    user,
+    username,
+    gender,
+    age,
+    weight,
+    height,
+    goal,
+    bodytype,
+    sleeptime,
+    goaltime,
+  } = userData;
   if (!user) return;
   const userRef = fire.firestore().doc("users/user.uid");
   const snapshot = await userRef.get();
   if (!snapshot.exists) {
-    const { email, password } = user;
+    const { email } = user;
     try {
       userRef.set({
         username,
         email,
-        password,
         gender,
         age,
         weight,
@@ -49,5 +49,3 @@ export const createUserDocument = async (
     }
   }
 };
-
-//test commit

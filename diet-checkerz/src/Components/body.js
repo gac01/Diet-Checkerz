@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "../Stylesheet/main-page.css";
 import "../Stylesheet/body.module.css";
 import { Button, TextField, Grid, Paper } from "@material-ui/core";
-import { fire } from "../Config/fire.js";
+import { fire } from "../utils/fire.js";
 
 function InputBox(props) {
   const { Meal, setMeal, Calories, setCalories, Date, setDate } = props;

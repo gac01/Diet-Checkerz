@@ -1,7 +1,22 @@
 import { useRadioGroup } from "@material-ui/core";
 import React, { Component } from "react";
-import { fire, createUserDocument } from "../Config/fire";
+import { fire, createUserDocument } from "../utils/fire";
+import { BODYTYPE } from "../utils/constants";
 import "../Stylesheet/login.module.css";
+
+const initialState = {
+  username: "aaa",
+  email: "tzuriel@gmail.com",
+  password: "123123",
+  gender: "adiyoga",
+  age: 0, // in years
+  weight: 0, // in kilograms
+  height: 0, // in centimeters
+  goal: "lose",
+  bodytype: BODYTYPE.ECTOMORPH,
+  sleeptime: 0, // in hours, daily
+  goaltime: 0,
+};
 
 class Login extends Component {
   constructor(props) {
@@ -9,26 +24,16 @@ class Login extends Component {
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.signup = this.signup.bind(this);
-    this.state = {
-      name: "",
-      email: "",
-      password: "",
-      gender: "",
-      age: "", // in years
-      weight: "", // in kilograms
-      height: "", // in centimeters
-      goal: "",
-      bodytype: "",
-      sleeptime: "", // in hours, daily
-      goaltime: "",
-    };
+    this.state = initialState;
   }
+
   login = async (event) => {
     event.preventDefault();
+    const { email, password } = this.state;
     try {
       const { user } = await fire
         .auth()
-        .signInWithEmailAndPassword(this.state.email, this.state.password);
+        .signInWithEmailAndPassword(email, password);
       console.log(user);
     } catch (err) {
       console.log("error", err);
@@ -37,23 +42,15 @@ class Login extends Component {
 
   signup = async (event) => {
     event.preventDefault();
+    const { email, password } = this.state;
+    console.log("password: " + password);
     try {
       const { user } = await fire
         .auth()
-        .createUserWithEmailAndPassword(this.state.email, this.state.password);
+        .createUserWithEmailAndPassword(email, password);
       console.log(user);
-      await createUserDocument(
-        user,
-        this.state.name,
-        this.state.gender,
-        this.state.age,
-        this.state.weight,
-        this.state.height,
-        this.state.goal,
-        this.state.bodytype,
-        this.state.sleeptime,
-        this.state.goaltime
-      );
+      const userData = { user, ...this.state };
+      await createUserDocument(userData);
     } catch (err) {
       console.log("error", err);
     }
@@ -76,7 +73,7 @@ class Login extends Component {
             name="username"
             placeholder="Jack"
             onChange={this.handleChange}
-            value={this.state.name}
+            value={this.state.username}
           />
           <h3>What is your email?</h3>
           <input
@@ -124,7 +121,7 @@ class Login extends Component {
           <h3> What's your age? </h3>
           <input
             type="number"
-            name="age-answer"
+            name="age"
             min="0"
             max="150"
             onChange={this.handleChange}
@@ -135,7 +132,7 @@ class Login extends Component {
             My Weight is:
             <input
               type="number"
-              name="weight-answer"
+              name="weight"
               min="0"
               max="500"
               onChange={this.handleChange}
@@ -147,7 +144,7 @@ class Login extends Component {
             My Height is:
             <input
               type="number"
-              name="height-answer"
+              name="height"
               min="0"
               max="300"
               onChange={this.handleChange}
@@ -157,7 +154,7 @@ class Login extends Component {
           </p>
           <h3>Which best describes your goal?</h3>
           <input
-            name="goal_option"
+            name="goal"
             id="Lose Weight"
             type="radio"
             value="Lose"
@@ -169,7 +166,7 @@ class Login extends Component {
             <img src="../assets/Lose Weight.jpg" alt="Lose" />
           </label>
           <input
-            name="goal_option"
+            name="goal"
             id="Maintain Weight"
             type="radio"
             value="Maintain"
@@ -181,7 +178,7 @@ class Login extends Component {
             <img src="../assets/Maintain Weight.jpeg" alt="Maintain" />
           </label>
           <input
-            name="goal_option"
+            name="goal"
             id="Gain Weight"
             type="radio"
             value="Gain"
@@ -192,41 +189,45 @@ class Login extends Component {
           <h3>Which best describes your body type?</h3>
           <input
             id="Ectomorph"
-            name="body_type"
+            name="bodytype"
             class="input-hidden"
             type="radio"
-            value="Ectomorph"
+            value={BODYTYPE.ECTOMORPH}
             onChange={this.handleChange}
-            checked={this.state.bodytype === "Ectomorph"}
+            checked={this.state.bodytype === BODYTYPE.ECTOMORPH}
           />
           <label for="Ectomorph">
-            <img src="../assets/Ectomorph.jpg" alt="Ectomorph" width="100px" />
+            <img
+              src="../assets/Ectomorph.jpg"
+              alt={BODYTYPE.ECTOMORPH}
+              width="100px"
+            />
           </label>
 
           <input
             id="Mesomorph"
-            name="body_type"
+            name="bodytype"
             class="input-hidden"
             type="radio"
-            value="Mesomorph"
+            value={BODYTYPE.MESOMORPH}
             onChange={this.handleChange}
-            checked={this.state.bodytype === "Mesomorph"}
+            checked={this.state.bodytype === BODYTYPE.MESOMORPH}
           />
           <label for="Mesomorph">
-            <img src="../assets/Mesomorph.jpg" alt="Mesomorph" />
+            <img src="../assets/Mesomorph.jpg" alt={BODYTYPE.MESOMORPH} />
           </label>
 
           <input
             id="Endomorph"
-            name="body_type"
+            name="bodytype"
             class="input-hidden"
             type="radio"
-            value="Endomorph"
+            value={BODYTYPE.ENDOMORPH}
             onChange={this.handleChange}
-            checked={this.state.bodytype === "Endomorph"}
+            checked={this.state.bodytype === BODYTYPE.ENDOMORPH}
           />
           <label for="Endomorph">
-            <img src="../assets/Endomorph.jpg" alt="Endomorph" />
+            <img src="../assets/Endomorph.jpg" alt={BODYTYPE.ENDOMORPH} />
           </label>
           <label for="Gain Weight">
             <img src="../assets/Gain Weight.jpg" alt="Gain" />
@@ -234,7 +235,7 @@ class Login extends Component {
           <h3>How many hours of sleep do you get daily?</h3>
           <input
             type="number"
-            name="sleep_amount"
+            name="sleeptime"
             min="0"
             max="24"
             onChange={this.handleChange}
@@ -246,7 +247,7 @@ class Login extends Component {
           <p>
             <input
               type="number"
-              name="time"
+              name="goaltime"
               min="0"
               max="1000"
               onChange={this.handleChange}
