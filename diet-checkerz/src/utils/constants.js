@@ -1,5 +1,11 @@
 export const BODYTYPE = {
-  ECTOMORPH: 1,
-  MESOMORPH: 2,
-  ENDOMORPH: 3,
+  ECTOMORPH: "ectomorph",
+  MESOMORPH: "mesomorph",
+  ENDOMORPH: "endomorph",
+};
+
+export const GOAL = {
+  LOSE: "lose",
+  MAINTAIN: "maintain",
+  GAIN: "gain",
 };

@@ -1,21 +1,21 @@
 import { useRadioGroup } from "@material-ui/core";
 import React, { Component } from "react";
 import { fire, createUserDocument } from "../utils/fire";
-import { BODYTYPE } from "../utils/constants";
+import { BODYTYPE, GOAL } from "../utils/constants";
 import "../Stylesheet/login.module.css";
 
 const initialState = {
-  username: "aaa",
-  email: "tzuriel@gmail.com",
-  password: "123123",
-  gender: "adiyoga",
+  username: "",
+  email: "",
+  password: "",
+  gender: "",
   age: 0, // in years
   weight: 0, // in kilograms
   height: 0, // in centimeters
-  goal: "lose",
-  bodytype: BODYTYPE.ECTOMORPH,
+  goal: "",
+  bodytype: "",
   sleeptime: 0, // in hours, daily
-  goaltime: 0,
+  goaltime: 0, // in weeks
 };
 
 class Login extends Component {
@@ -157,10 +157,10 @@ class Login extends Component {
             name="goal"
             id="Lose Weight"
             type="radio"
-            value="Lose"
-            class="input-hidden"
+            value={GOAL.LOSE}
+            className="input-hidden "
             onChange={this.handleChange}
-            checked={this.state.goal === "Lose"}
+            checked={this.state.goal === GOAL.LOSE}
           />
           <label for="Lose Weight">
             <img src="../assets/Lose Weight.jpg" alt="Lose" />
@@ -169,10 +169,10 @@ class Login extends Component {
             name="goal"
             id="Maintain Weight"
             type="radio"
-            value="Maintain"
-            class="input-hidden"
+            value={GOAL.MAINTAIN}
+            className="input-hidden"
             onChange={this.handleChange}
-            checked={this.state.goal === "Maintain"}
+            checked={this.state.goal === GOAL.MAINTAIN}
           />
           <label for="Maintain Weight">
             <img src="../assets/Maintain Weight.jpeg" alt="Maintain" />
@@ -181,16 +181,16 @@ class Login extends Component {
             name="goal"
             id="Gain Weight"
             type="radio"
-            value="Gain"
-            class="input-hidden"
+            value={GOAL.GAIN}
+            className="input-hidden"
             onChange={this.handleChange}
-            checked={this.state.goal === "Gain"}
+            checked={this.state.goal === GOAL.GAIN}
           />
           <h3>Which best describes your body type?</h3>
           <input
             id="Ectomorph"
             name="bodytype"
-            class="input-hidden"
+            className="input-hidden"
             type="radio"
             value={BODYTYPE.ECTOMORPH}
             onChange={this.handleChange}
@@ -207,7 +207,7 @@ class Login extends Component {
           <input
             id="Mesomorph"
             name="bodytype"
-            class="input-hidden"
+            className="input-hidden"
             type="radio"
             value={BODYTYPE.MESOMORPH}
             onChange={this.handleChange}
@@ -220,7 +220,7 @@ class Login extends Component {
           <input
             id="Endomorph"
             name="bodytype"
-            class="input-hidden"
+            className="input-hidden"
             type="radio"
             value={BODYTYPE.ENDOMORPH}
             onChange={this.handleChange}

@@ -8,6 +8,7 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./navbar-styling";
+import { fire } from "../utils/fire";
 
 const NavBar = () => {
   return (
@@ -26,7 +27,11 @@ const NavBar = () => {
           <NavLink to="/main">Home</NavLink>
           <NavLink to="/">About Us</NavLink>
           <NavLink to="/">Contact Us</NavLink>
-          <NavBtnLink to="../signup">Take Survey</NavBtnLink>
+          <button
+            onClick={() => {
+              fire.auth().signOut();
+            }}
+          ></button>
         </NavMenu>
       </Nav>
     </div>
