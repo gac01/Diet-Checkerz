@@ -26,12 +26,12 @@ const NavBar = () => {
         <NavMenu>
           <NavLink to="/main">Home</NavLink>
           <NavLink to="/">About Us</NavLink>
-          <NavLink to="/">Contact Us</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
           <button
             onClick={() => {
               fire.auth().signOut();
             }}
-          ></button>
+          >Sign Out</button>
         </NavMenu>
       </Nav>
     </div>

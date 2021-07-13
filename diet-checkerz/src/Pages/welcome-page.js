@@ -11,7 +11,7 @@ import NavBar from "../Components/navbar";
 import AboutUs from "../Components/about-us.js";
 import SurveyPage from "./signup-page";
 import MainPage from "./main-page";
-import Login from "../Components/login";
+import ContactUs from "../Components/contact-us";
 
 const theme = createMuiTheme({
   palette: {
@@ -49,6 +49,10 @@ function WelcomePage() {
             <Route path="/main">
               <NavBar />
               <MainPage />
+            </Route>
+            <Route path="/contact">
+              <NavBar />
+              <ContactUs />
             </Route>
           </Switch>
         </ThemeProvider>
