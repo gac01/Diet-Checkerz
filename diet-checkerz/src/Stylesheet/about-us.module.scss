@@ -2,22 +2,22 @@
 
 body {
   margin: 0;
-  font-family: 'Staatliches', cursive;
-  
-  P {
+
+  p{
     color: white;
-    font-size: 2em;
+    font-size: 5em;
     text-align: center;
     margin-top: 30%; 
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.904); /* Black w/opacity/see-through */
     border: 3px solid #f1f1f1;
-    transform: translate(0%, -110%);
+    transform: translate(0%, -100%);
     padding: 10px;
     font-weight: bold;
+    font-family: 'Staatliches', cursive;
   }
-}
-  
+}  
+
 section {
   padding: 3em;
   height: 100vh;
