@@ -43,7 +43,6 @@ class Login extends Component {
   signup = async (event) => {
     event.preventDefault();
     const { email, password } = this.state;
-    console.log("password: " + password);
     try {
       const { user } = await fire
         .auth()

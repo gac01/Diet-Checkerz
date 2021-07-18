@@ -13,7 +13,7 @@ function InputBox(props) {
     event.preventDefault();
     fire
       .firestore()
-      .collection("Meals")
+      .collection(fire.auth().currentUser.uid)
       .add({
         meal: newMeal,
         calories: parseInt(newCalories),
@@ -142,18 +142,31 @@ function RecommendedMeal() {
 
 function CurrentMeal() {
   const [Meal, setMeal] = useState([]);
+  const today = new Date(),
+    currentDate =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() < 9
+        ? "0" + (today.getMonth() + 1)
+        : today.getMonth() + 1) +
+      "-" +
+      today.getDate();
   useEffect(() => {
     fire
       .firestore()
-      .collection("Meals")
+      .collection(fire.auth().currentUser.uid)
       .onSnapshot((snapshot) => {
         const NewMeals = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        setMeal(NewMeals);
+        console.log(currentDate);
+        const FilteredMeals = NewMeals.filter(
+          (element) => element.date === currentDate
+        );
+        setMeal(FilteredMeals);
       });
-  }, []);
+  }, [currentDate]);
   return (
     <>
       <table style={{ margin: "0 auto", width: "100%" }}>

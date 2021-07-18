@@ -27,7 +27,7 @@ export const createUserDocument = async (userData) => {
     goaltime,
   } = userData;
   if (!user) return;
-  const userRef = fire.firestore().doc("users/user.uid");
+  const userRef = fire.firestore().doc(`users/${user.uid}`);
   const snapshot = await userRef.get();
   if (!snapshot.exists) {
     const { email } = user;
