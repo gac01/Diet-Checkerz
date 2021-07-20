@@ -66,34 +66,43 @@ class Login extends Component {
     return (
       <div>
         <form>
-          <h3>What's your name?</h3>
+          <h2>What is your name?</h2>
           <input
             type="text"
             id="username"
             name="username"
-            placeholder="Jack"
+            placeholder="Enter Your Name..."
             onChange={this.handleChange}
             value={this.state.username}
           />
-          <h3>What is your email?</h3>
+          <br />
+          <br />
+          <br />
+          <h2>Email Address:</h2>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="enter email address"
+            placeholder="Enter Your Email Address..."
             onChange={this.handleChange}
             value={this.state.email}
           />
-          <h3>Password: </h3>
+          <br />
+          <br />
+          <br />
+          <h2>Password:</h2>
           <input
             name="password"
             type="password"
             onChange={this.handleChange}
             id="password"
-            placeholder="enter password"
+            placeholder="Enter Your Password..."
             value={this.state.password}
           />
-          <h3>What is your gender?</h3>
+          <br />
+          <br />
+          <br />
+          <h2>What is your gender?</h2>
           <input
             type="radio"
             name="gender"
@@ -104,7 +113,7 @@ class Login extends Component {
             checked={this.state.gender === "male"}
           />
           <label for="male">
-            <img src="../assets/Male Icon.jpeg" alt="MALE👨" />
+            <img src="https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_user-512.png" alt="MALE👨" />
           </label>
           <input
             type="radio"
@@ -116,9 +125,12 @@ class Login extends Component {
             checked={this.state.gender === "female"}
           />
           <label for="female">
-            <img src="../assets/Female Icon.jpeg" alt="FEMALE🙎‍" />
+            <img src="https://img.pngio.com/social-user-woman-avatar-profile-icon-female-profile-png-512_512.png" alt="FEMALE🙎‍" />
           </label>
-          <h3> What's your age? </h3>
+          <br />
+          <br />
+          <br />
+          <h2> What's your age? </h2>
           <input
             type="number"
             name="age"
@@ -127,9 +139,11 @@ class Login extends Component {
             onChange={this.handleChange}
             value={this.state.age}
           />
-          <h3>What's your weight? (in kilograms)</h3>
-          <p>
-            My Weight is:
+          <br />
+          <br />
+          <br />
+          <h2>What is your weight? (in Kilograms)</h2>
+          <div>
             <input
               type="number"
               name="weight"
@@ -138,10 +152,12 @@ class Login extends Component {
               onChange={this.handleChange}
               value={this.state.weight}
             />
-          </p>
-          <h3>What is your height? (in Centimetres)</h3>
-          <p>
-            My Height is:
+          </div>
+          <br />
+          <br />
+          <br />
+          <h2>What is your height? (in Centimetres)</h2>
+          <div>
             <input
               type="number"
               name="height"
@@ -150,9 +166,11 @@ class Login extends Component {
               onChange={this.handleChange}
               value={this.state.height}
             />{" "}
-            cm
-          </p>
-          <h3>Which best describes your goal?</h3>
+          </div>
+          <br />
+          <br />
+          <br />
+          <h2>Which image best describes your goal?</h2>
           <input
             name="goal"
             id="Lose Weight"
@@ -163,7 +181,7 @@ class Login extends Component {
             checked={this.state.goal === GOAL.LOSE}
           />
           <label for="Lose Weight">
-            <img src="../assets/Lose Weight.jpg" alt="Lose" />
+            <img src="https://static.thenounproject.com/png/2334704-200.png" alt="Lose" />
           </label>
           <input
             name="goal"
@@ -175,7 +193,7 @@ class Login extends Component {
             checked={this.state.goal === GOAL.MAINTAIN}
           />
           <label for="Maintain Weight">
-            <img src="../assets/Maintain Weight.jpeg" alt="Maintain" />
+            <img src="https://cdn0.iconfinder.com/data/icons/gym-outline-2/64/weight-512.png" alt="Maintain" />
           </label>
           <input
             name="goal"
@@ -186,7 +204,13 @@ class Login extends Component {
             onChange={this.handleChange}
             checked={this.state.goal === GOAL.GAIN}
           />
-          <h3>Which best describes your body type?</h3>
+          <label for="Gain Weight">
+            <img src="https://static.thenounproject.com/png/2476006-200.png" alt="Gain" />
+          </label>
+          <br />
+          <br />
+          <br />
+          <h2>Which best describes your body type?</h2>
           <input
             id="Ectomorph"
             name="bodytype"
@@ -198,7 +222,7 @@ class Login extends Component {
           />
           <label for="Ectomorph">
             <img
-              src="../assets/Ectomorph.jpg"
+              src="https://cdn1.iconfinder.com/data/icons/fitness-healthy-living-wildberry-vol-1/256/Ectomorph-512.png"
               alt={BODYTYPE.ECTOMORPH}
               width="100px"
             />
@@ -214,7 +238,7 @@ class Login extends Component {
             checked={this.state.bodytype === BODYTYPE.MESOMORPH}
           />
           <label for="Mesomorph">
-            <img src="../assets/Mesomorph.jpg" alt={BODYTYPE.MESOMORPH} />
+            <img src="https://cdn1.iconfinder.com/data/icons/fitness-healthy-living-wildberry-vol-2/256/Mesomorph-512.png" alt={BODYTYPE.MESOMORPH} />
           </label>
 
           <input
@@ -227,12 +251,12 @@ class Login extends Component {
             checked={this.state.bodytype === BODYTYPE.ENDOMORPH}
           />
           <label for="Endomorph">
-            <img src="../assets/Endomorph.jpg" alt={BODYTYPE.ENDOMORPH} />
+            <img src="https://cdn1.iconfinder.com/data/icons/fitness-healthy-living-wildberry-vol-1/256/Endomorph-512.png" alt={BODYTYPE.ENDOMORPH} />
           </label>
-          <label for="Gain Weight">
-            <img src="../assets/Gain Weight.jpg" alt="Gain" />
-          </label>
-          <h3>How many hours of sleep do you get daily?</h3>
+          <br />
+          <br />
+          <br />
+          <h2>How many hours of sleep do you get daily?</h2>
           <input
             type="number"
             name="sleeptime"
@@ -241,10 +265,13 @@ class Login extends Component {
             onChange={this.handleChange}
             value={this.state.sleeptime}
           />
-          <h3>
+          <br />
+          <br />
+          <br />
+          <h2>
             How much time will you allow yourself to reach this fitness goal?
-          </h3>
-          <p>
+          </h2>
+          <div>
             <input
               type="number"
               name="goaltime"
@@ -253,11 +280,14 @@ class Login extends Component {
               onChange={this.handleChange}
               value={this.state.goaltime}
             />{" "}
-            weeks
-          </p>
+          </div>
+          <br />
+          <br />
+          <br />
           <button onClick={this.login}>Login</button>
           <button onClick={this.signup}>Signup</button>
         </form>
+        <br />
       </div>
     );
   }

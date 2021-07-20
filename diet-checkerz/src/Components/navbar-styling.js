@@ -12,6 +12,8 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
+  font-family: Lato;
+  font-weight: bolder;
   color: #fff;
   display: flex;
   align-items: center;

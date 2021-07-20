@@ -8,6 +8,8 @@ Nav {
 }
 
 button {
+    font-family: Lato;
+    font-weight: bolder;
     display: center;
     border-radius: 6px;
     background: #256ce1;

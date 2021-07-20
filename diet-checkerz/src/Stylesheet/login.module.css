@@ -4,6 +4,52 @@
     margin: auto;
   }
 
+  img {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 6px;
+    padding: 5px;
+    width: 150px;
+  }
+  
+  img:hover {
+    box-shadow: 0 0 2px 1px rgba(38, 167, 241, 0.705);
+  }
+
+  input[type=text] {
+    border: 2px solid rgb(85, 84, 84);
+    border-radius: 5px;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=email] {
+    border: 2px solid rgb(85, 84, 84);
+    border-radius: 5px;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=password] {
+    border: 2px solid rgb(85, 84, 84);
+    border-radius: 5px;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=number] {
+    width: 5%;
+    padding: 16px 20px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    background-color: #f1f1f1be;
+  }
+
   .form {
     position: relative;
     z-index: 1;
