@@ -65,7 +65,7 @@ const AboutUs = () => {
       </section>
 
       <section>
-        <p>Fill in the Survey!</p>
+        <p>Check Out Your Daily Needs!</p>
       </section>
     </div>
   );

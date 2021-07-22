@@ -6,3 +6,29 @@ Nav {
     margin: 0;
     padding: 0;
 }
+
+button {
+    font-family: Lato;
+    font-weight: bolder;
+    display: center;
+    border-radius: 6px;
+    background: #256ce1;
+    padding: 10px 10px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin-left: 1px;
+    align-items: center;
+    margin-right: 1px;
+    width: 5vw;
+}
+
+button:hover {
+    transition: all 0.2s ease-in-out;
+    background: white;
+    color: #010606;
+}
+    

@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&family=Lato:wght@300&family=Noto+Sans+JP&family=Poppins:wght@300&family=Ubuntu&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Staatliches', cursive;
-  
-  P {
+
+  p{
     color: white;
-    font-size: 2em;
+    font-size: 5em;
     text-align: center;
     margin-top: 30%; 
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.904); /* Black w/opacity/see-through */
     border: 3px solid #f1f1f1;
-    transform: translate(0%, -110%);
+    transform: translate(0%, -100%);
     padding: 10px;
     font-weight: bold;
+    font-family: 'Domine', serif;
   }
-}
-  
+}  
+
 section {
   padding: 3em;
   height: 100vh;
@@ -25,14 +26,16 @@ section {
   box-sizing: border-box;
   
   blockquote {
-    font-size: 1.3em;
+    font-size: 40px;
     width: 60%;
     margin-top: 17%;
     position: absolute;
+    font-family: 'Noto Sans JP';
+    color:rgba(0, 0, 0, 0.808); 
 
     span {
       width: 100%;
-      background: rgb(11, 11, 85);
+      background: rgb(0, 0, 0);
       display: block;
       height: 5px;
       margin-top: 20px;
