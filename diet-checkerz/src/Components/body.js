@@ -25,29 +25,7 @@ function InputBox(props) {
         setNewDate("");
       });
   };
-  /*
-(event) => {
-    event.preventDefault();
-    const CaloriesData = [...Calories, Number(newCalories)];
-    setCalories(CaloriesData);
-    const MealsData = [
-      ...Meal,
-      {
-        description: newMeal,
-        calories: newCalories,
-        date: newDate,
-      },
-    ];
-    const DateData = [
-      ...Date,
-      {
-        description: newDate,
-      },
-    ];
-    setMeal(MealsData);
-    setDate(DateData);
-  };
-*/
+
   return (
     <Paper className="InputBox" elevation={3}>
       <h3> Input your meal here!</h3>
@@ -175,6 +153,8 @@ function CurrentMeal() {
             <th> No. </th>
             <th> Meal </th>
             <th> Calories </th>
+            <th> Update </th>
+            <th> Delete </th>
           </tr>
         </thead>
         {Meal.map((MealList, index) => (
@@ -182,6 +162,33 @@ function CurrentMeal() {
             <td>{index + 1}</td>
             <td> {MealList.meal}</td>
             <td> {MealList.calories}</td>
+            <td>
+              <button
+                onClick={() => {
+                  fire
+                    .firestore()
+                    .collection(fire.auth().currentUser.uid)
+                    .doc(MealList.id)
+                    .set({ ...MealList, Meal });
+                }}
+              >
+                Update
+              </button>
+            </td>
+            <td>
+              <button
+                onClick={() => {
+                  fire
+                    .firestore()
+                    .collection(fire.auth().currentUser.uid)
+                    .doc(MealList.id)
+                    .delete();
+                }}
+              >
+                {" "}
+                Delete{" "}
+              </button>
+            </td>
           </tr>
         ))}
       </table>
