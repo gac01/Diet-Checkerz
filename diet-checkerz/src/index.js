@@ -2,7 +2,6 @@ import React from "react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "./reportWebVitals.js";
-import WelcomePage from "./Pages/welcome-page";
 import "./index.css";
 import App from "./App";
 

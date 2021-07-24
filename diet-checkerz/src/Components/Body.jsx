@@ -152,20 +152,22 @@ function CurrentMeal() {
       "-" +
       today.getDate();
   useEffect(() => {
-    fire
-      .firestore()
-      .collection(fire.auth().currentUser.uid)
-      .onSnapshot((snapshot) => {
-        const NewMeals = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        console.log(currentDate);
-        const FilteredMeals = NewMeals.filter(
-          (element) => element.date === currentDate
-        );
-        setMeal(FilteredMeals);
-      });
+    if (fire.auth().currentUser) {
+      fire
+        .firestore()
+        .collection(fire.auth().currentUser.uid)
+        .onSnapshot((snapshot) => {
+          const NewMeals = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          console.log(currentDate);
+          const FilteredMeals = NewMeals.filter(
+            (element) => element.date === currentDate
+          );
+          setMeal(FilteredMeals);
+        });
+    }
   }, [currentDate]);
   return (
     <>

@@ -1,4 +1,3 @@
-import { useRadioGroup } from "@material-ui/core";
 import React, { Component } from "react";
 import { fire, createUserDocument } from "../utils/fire";
 import { BODYTYPE, GOAL } from "../utils/constants";
@@ -37,6 +36,7 @@ class Login extends Component {
       console.log(user);
     } catch (err) {
       console.log("error", err);
+      alert("Invalid credentials");
     }
   };
 
@@ -52,6 +52,7 @@ class Login extends Component {
       await createUserDocument(userData);
     } catch (err) {
       console.log("error", err);
+      alert("Invalid field values");
     }
   };
 
@@ -106,25 +107,31 @@ class Login extends Component {
             type="radio"
             name="gender"
             id="male"
-            class="input-hidden"
+            className="input-hidden"
             value="male"
             onChange={this.handleChange}
             checked={this.state.gender === "male"}
           />
           <label for="male">
-            <img src="https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_user-512.png" alt="MALE👨" />
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_user-512.png"
+              alt="MALE👨"
+            />
           </label>
           <input
             type="radio"
             name="gender"
             id="female"
-            class="input-hidden"
+            className="input-hidden"
             value="female"
             onChange={this.handleChange}
             checked={this.state.gender === "female"}
           />
           <label for="female">
-            <img src="https://img.pngio.com/social-user-woman-avatar-profile-icon-female-profile-png-512_512.png" alt="FEMALE🙎‍" />
+            <img
+              src="https://img.pngio.com/social-user-woman-avatar-profile-icon-female-profile-png-512_512.png"
+              alt="FEMALE🙎‍"
+            />
           </label>
           <br />
           <br />
@@ -180,7 +187,10 @@ class Login extends Component {
             checked={this.state.goal === GOAL.LOSE}
           />
           <label for="Lose Weight">
-            <img src="https://static.thenounproject.com/png/2334704-200.png" alt="Lose" />
+            <img
+              src="https://static.thenounproject.com/png/2334704-200.png"
+              alt="Lose"
+            />
           </label>
           <input
             name="goal"
@@ -192,7 +202,10 @@ class Login extends Component {
             checked={this.state.goal === GOAL.MAINTAIN}
           />
           <label for="Maintain Weight">
-            <img src="https://cdn0.iconfinder.com/data/icons/gym-outline-2/64/weight-512.png" alt="Maintain" />
+            <img
+              src="https://cdn0.iconfinder.com/data/icons/gym-outline-2/64/weight-512.png"
+              alt="Maintain"
+            />
           </label>
           <input
             name="goal"
@@ -204,7 +217,10 @@ class Login extends Component {
             checked={this.state.goal === GOAL.GAIN}
           />
           <label for="Gain Weight">
-            <img src="https://static.thenounproject.com/png/2476006-200.png" alt="Gain" />
+            <img
+              src="https://static.thenounproject.com/png/2476006-200.png"
+              alt="Gain"
+            />
           </label>
           <br />
           <br />
@@ -237,7 +253,10 @@ class Login extends Component {
             checked={this.state.bodytype === BODYTYPE.MESOMORPH}
           />
           <label for="Mesomorph">
-            <img src="https://cdn1.iconfinder.com/data/icons/fitness-healthy-living-wildberry-vol-2/256/Mesomorph-512.png" alt={BODYTYPE.MESOMORPH} />
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/fitness-healthy-living-wildberry-vol-2/256/Mesomorph-512.png"
+              alt={BODYTYPE.MESOMORPH}
+            />
           </label>
 
           <input
@@ -250,7 +269,10 @@ class Login extends Component {
             checked={this.state.bodytype === BODYTYPE.ENDOMORPH}
           />
           <label for="Endomorph">
-            <img src="https://cdn1.iconfinder.com/data/icons/fitness-healthy-living-wildberry-vol-1/256/Endomorph-512.png" alt={BODYTYPE.ENDOMORPH} />
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/fitness-healthy-living-wildberry-vol-1/256/Endomorph-512.png"
+              alt={BODYTYPE.ENDOMORPH}
+            />
           </label>
           <br />
           <br />
@@ -269,6 +291,7 @@ class Login extends Component {
           <br />
           <h2>
             How much time will you allow yourself to reach this fitness goal?
+            (in Weeks)
           </h2>
           <div>
             <input

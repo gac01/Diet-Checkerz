@@ -1,13 +1,12 @@
-h1 { 
+h1 {
   color: black;
   font-family: Helvetica;
   font-size: 100px;
 }
 
 .HeaderBox {
-    display: flex;
-    flex-basis: 50%;
-    flex-grow: 0;
-    margin: 1rem;
+  display: flex;
+  flex-basis: 50%;
+  flex-grow: 0;
+  margin: 1rem;
 }
-

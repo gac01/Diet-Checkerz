@@ -50,4 +50,3 @@ export const NavMenu = styled.div`
     display: none;
   }
 `;
-

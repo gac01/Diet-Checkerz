@@ -5,13 +5,11 @@ import {
 } from "@material-ui/core/styles";
 import "../Stylesheet/welcome-page.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { fire } from "../utils/fire";
 
-import NavBar from "../Components/navbar";
-import AboutUs from "../Components/about-us.js";
-import SurveyPage from "./signup-page";
-import MainPage from "./main-page";
-import ContactUs from "../Components/contact-us";
+import MainPage from "./MainPage";
+import NavBar from "../Components/NavBar";
+import AboutUs from "../Components/AboutUs";
+import ContactUs from "../Components/ContactUs";
 
 const theme = createMuiTheme({
   palette: {

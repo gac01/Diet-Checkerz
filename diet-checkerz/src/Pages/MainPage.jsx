@@ -1,7 +1,7 @@
 import "../Stylesheet/main-page.css";
 import { useState } from "react";
-import Body from "../Components/body.js";
-import Header from "../Components/header.js";
+import Body from "../Components/Body";
+import Header from "../Components/Header";
 
 export default function MainPage() {
   const [Meal, setMeal] = useState([]); // This is used to store the meals that the user has eater throughout the day
