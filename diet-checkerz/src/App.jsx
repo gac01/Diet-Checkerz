@@ -1,6 +1,6 @@
 import "./App.css";
-import WelcomePage from "./Pages/welcome-page";
-import Login from "./Components/login";
+import WelcomePage from "./Pages/WelcomePage";
+import Login from "./Components/Login";
 import { fire } from "./utils/fire";
 import React, { Component } from "react";
 

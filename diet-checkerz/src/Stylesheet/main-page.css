@@ -1,13 +1,12 @@
 .main-page {
-    font-family: Helvetica;
-    align-items: center;
-    text-align: center;
-    max-width: 64rem;
-    margin: auto;
+  font-family: Helvetica;
+  align-items: center;
+  text-align: center;
+  max-width: 64rem;
+  margin: auto;
+}
 
-  }
-  
-  .HeaderBox {
-    flex-basis: 50%;
-    flex-grow: 0;
-  }
+.HeaderBox {
+  flex-basis: 50%;
+  flex-grow: 0;
+}

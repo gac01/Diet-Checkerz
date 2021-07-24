@@ -1,37 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Domine&family=Lato:wght@300&family=Noto+Sans+JP&family=Poppins:wght@300&family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Domine&family=Lato:wght@300&family=Noto+Sans+JP&family=Poppins:wght@300&family=Ubuntu&display=swap");
 
 body {
   margin: 0;
 
-  p{
+  p {
     color: white;
     font-size: 5em;
     text-align: center;
-    margin-top: 30%; 
-    background-color: rgb(0,0,0); /* Fallback color */
+    margin-top: 30%;
+    background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.904); /* Black w/opacity/see-through */
     border: 3px solid #f1f1f1;
     transform: translate(0%, -100%);
     padding: 10px;
     font-weight: bold;
-    font-family: 'Domine', serif;
+    font-family: "Domine", serif;
   }
-}  
+}
 
 section {
   padding: 3em;
   height: 100vh;
   position: relative;
   box-sizing: border-box;
-  
+
   blockquote {
     font-size: 40px;
     width: 60%;
     margin-top: 17%;
     position: absolute;
-    font-family: 'Noto Sans JP';
-    color:rgba(0, 0, 0, 0.808); 
+    font-family: "Noto Sans JP";
+    color: rgba(0, 0, 0, 0.808);
 
     span {
       width: 100%;
@@ -41,11 +41,11 @@ section {
       margin-top: 20px;
     }
   }
-  
+
   img {
     position: absolute;
   }
-  
+
   img:nth-of-type(1) {
     width: 33%;
     right: 1%;
@@ -64,7 +64,6 @@ section:nth-child(1) {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 section:nth-child(3) {
@@ -90,5 +89,8 @@ section:nth-child(3) {
   position: absolute;
   border: 5px solid lightgray;
   margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

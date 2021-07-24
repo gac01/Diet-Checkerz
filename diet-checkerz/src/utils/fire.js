@@ -13,6 +13,8 @@ var firebaseConfig = {
 
 export const fire = firebase.initializeApp(firebaseConfig);
 
+export const db = firebase.firestore();
+
 export const createUserDocument = async (userData) => {
   const {
     user,
