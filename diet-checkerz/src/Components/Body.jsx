@@ -155,7 +155,6 @@ function CurrentMeal() {
             <th> No. </th>
             <th> Meal </th>
             <th> Calories </th>
-            <th> Update </th>
             <th> Delete </th>
           </tr>
         </thead>
@@ -164,19 +163,6 @@ function CurrentMeal() {
             <td>{index + 1}</td>
             <td> {MealList.meal}</td>
             <td> {MealList.calories}</td>
-            <td>
-              <button
-                onClick={() => {
-                  fire
-                    .firestore()
-                    .collection(fire.auth().currentUser.uid)
-                    .doc(MealList.id)
-                    .set({ ...MealList, Meal });
-                }}
-              >
-                Update
-              </button>
-            </td>
             <td>
               <button
                 onClick={() => {
