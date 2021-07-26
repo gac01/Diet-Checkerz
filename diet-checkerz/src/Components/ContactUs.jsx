@@ -17,6 +17,9 @@ function ContactUs() {
         <br />
         We hope that this web application can be used to help people like us
         stay more disciplined in our diets and training.
+        <br />
+        <br />
+        Feel Free to Contact Us through "heyitslouis123@gmail.com"
       </h6>
     </div>
   );
