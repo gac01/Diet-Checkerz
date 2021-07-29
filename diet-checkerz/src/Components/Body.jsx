@@ -146,7 +146,7 @@ function CurrentMeal() {
           setMeal(FilteredMeals);
         });
     }
-  }, [currentDate]);
+  }, []);
   return (
     <>
       <table style={{ margin: "0 auto", width: "100%" }}>
