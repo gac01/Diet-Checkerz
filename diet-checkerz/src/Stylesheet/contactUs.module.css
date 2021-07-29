@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+
+h6 {
+  font-size: 30px;
+  font-weight: lighter;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+}
